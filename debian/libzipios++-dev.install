@@ -1,0 +1,6 @@
+debian/tmp/usr/include/*
+debian/tmp/usr/lib/*/lib*.a
+debian/tmp/usr/lib/*/lib*.so
+debian/*.h usr/include/zipios++/
+src/backbuffer.h usr/include/zipios++/
+src/zipios_common.h usr/include/zipios++/

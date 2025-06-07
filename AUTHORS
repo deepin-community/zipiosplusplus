@@ -1,0 +1,38 @@
+Main author:              Thomas Sondergaard (thomass@deltadata.dk)
+FreeBSD port maintainer:  Ying-Chieh Liao    (ijliao@csie.nctu.edu.tw)
+
+The files zipios++/directory.h and zipios++/directory.cpp originate
+from the dir_it library written by Dietmar Kuehl (it's available for
+download at http://www.boost.org)
+
+zipios++.spec contributed by Rui Miguel Silva Seabra
+
+libtool/shared library patch contributed by Arkadiusz Miskiewicz (arekm)
+
+Russel Winder (r.winder@180sw.com) did the work of amending the code to
+so as to work with GCC 3.2.1.
+
+Ross Burton (r.burton@180sw.com) transformed zipios++.spec into
+zipios++.spec.in and made it more RedHat tradition conformant.
+
+Mark Donszelmann (Mark.Donszelmann@slac.stanford.edu) added gzipoutputstream
+and made several fixes for Visual C++ 6.0 and 7.0.
+
+Mike Salvatore (mike.salvatore@canonical.com) found a bug in zipheadio.h and
+offered a fix. The code would not check for EOF while reading a Uint32 or
+Uint16 value. See the infinite_loop.patch for details about the fix. See
+this blog post for details about the discovery of the bug:
+
+  https://salvatoresecurity.com/fun-with-fuzzers-how-i-discovered-three-vulnerabilities-part-2-of-3/
+
+Any version before 0.1.7 is considered affected by this bug.
+
+There is a corresponding CVE entry you can find here:
+
+  https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13453
+
+You may also want to consider upgrading your software to use version 2.x,
+since it has a full coverage set of tests which better insure that the
+number of potential bugs is very limited. It is also written for C++11.
+
+  https://github.com/Zipios/Zipios/

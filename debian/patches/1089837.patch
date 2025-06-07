@@ -1,0 +1,17 @@
+Description: Fix Debian bug #1089837
+Author: Werner Mayer <werner.wm.mayer@gmx.de>
+Bug: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1089837
+Forwarded: not-needed
+Last-Update: 2024-12-21 <YYYY-MM-DD, last update of the meta-information, optional>
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- zipios++-0.1.5.9+cvs.2007.04.28.orig/src/zipfile.cpp
++++ zipios++-0.1.5.9+cvs.2007.04.28/src/zipfile.cpp
+@@ -71,7 +71,6 @@ istream *ZipFile::getInputStream( const
+     ZipInputStream *zis( new ZipInputStream( _filename,
+       static_cast< const ZipCDirEntry * >( ent.get() )->
+       getLocalHeaderOffset() + _vs.startOffset() ) ) ;
+-    zis->getNextEntry();
+     return zis;
+   }
+ }

@@ -1,0 +1,18 @@
+Description: use pkg-config instead of cppunit-config
+ cppunit-config (and AM_PATH_CPPUNIT) was removed in cppunit 1.14
+Author: Rene Engelhard <rene@debian.org>
+Origin: vendor
+Forwarded: no
+Bug-Debian: https://bugs.debian.org/862126
+Last-Update: 2017-05-08
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -44,6 +44,7 @@
+ # This doesn't work on newer version
+ # https://stackoverflow.com/questions/8533879/macro-am-path-cppunit-not-found-in-library
+ #AM_PATH_CPPUNIT(1.6.0)
++PKG_CHECK_MODULES(CPPUNIT, cppunit >= 1.6.0)
+ 
+ # Checks for header files.
+ AC_HEADER_DIRENT

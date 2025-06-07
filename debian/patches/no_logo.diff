@@ -1,0 +1,17 @@
+Description: remove logo privacy breach
+Author: W. Martin Borgert <debacle@debian.org>
+Origin: vendor
+Last-Update: 2016-08-19
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/zipios++/fcoll.h
++++ b/zipios++/fcoll.h
+@@ -277,7 +277,7 @@
+    
+    \htmlonly
+    Project hosted by <A HREF="http://sourceforge.net">
+-   <img src="http://sourceforge.net/sflogo.php?group_id=5418&type=1" >
++   http://sourceforge.net/
+    </A><p>
+    Logo created with <A HREF="http://www.webgfx.ch/titlepic.htm">
+    <img src="webgfx.gif" >
