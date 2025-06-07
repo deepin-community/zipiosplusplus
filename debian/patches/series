@@ -1,0 +1,5 @@
+no_logo.diff
+zipinputstreambuf.diff
+amd64_fix.diff
+pkg-config.diff
+1089837.patch

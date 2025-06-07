@@ -1,0 +1,37 @@
+Description: Fix for AMD64
+Author: Masayuki Hatta <mhatta@debian.org>
+Origin: vendor
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/zipios++/meta-iostreams.h
++++ b/zipios++/meta-iostreams.h
+@@ -7,11 +7,6 @@
+ 
+ #include <iostream>
+ #include <fstream>
+-
+-#if defined (HAVE_STD_IOSTREAM) && defined (USE_STD_IOSTREAM)
+ #include <sstream>
+-#else
+-#include <strstream>
+-#endif
+ 
+ #endif
+--- a/zipios++/zipios_defs.h
++++ b/zipios++/zipios_defs.h
+@@ -1,10 +1,13 @@
+ #ifndef ZIPIOS_DEFS_H
+ #define ZIPIOS_DEFS_H
+ 
++#include "zipios++/zipios-config.h"
++#include <stdint.h>
++
+ namespace zipios {
+ 
+-typedef unsigned short uint16 ;
+-typedef unsigned long  uint32 ;
++typedef uint16_t uint16 ;
++typedef uint32_t uint32 ;
+ 
+ } // namespace
+ 
